@@ -42,8 +42,8 @@ class PrometheusMiddleware(BaseHTTPMiddleware):
             if match is Match.FULL:
                 path = route.path
                 break
-        else:
-            return await call_next(request)
+            else:
+                return await call_next(request)
         method = request.method
         start_time = time.perf_counter()
         try:
